@@ -2,6 +2,8 @@
     <string name="app_name">VK_case</string>
     <string name="hi">Поднятая рука</string>
     <string name="message">Привет всем!!!</string>
+    <string name="dwayne">Dwayne Rock Johnson</string>
+    <string name="john">IIIIIIIIT\'S JOOOOOOOOHN CEEEEEEENAAAAA!!!!11!!!!</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
