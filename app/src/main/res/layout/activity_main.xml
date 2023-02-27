@@ -25,7 +25,7 @@
         android:id="@+id/riseHand"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:background="@drawable/button_shape"
+        android:background="@drawable/button_shape_on"
         android:src="@drawable/rise_hand"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/callEnd"
@@ -35,7 +35,7 @@
         android:id="@+id/vebCam"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:background="@drawable/button_shape"
+        android:background="@drawable/button_shape_on"
         android:src="@drawable/vebcam_on"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/riseHand"
@@ -45,7 +45,7 @@
         android:id="@+id/mic"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:background="@drawable/button_shape"
+        android:background="@drawable/button_shape_on"
         android:src="@drawable/mic_on"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/vebCam"
@@ -56,7 +56,7 @@
         android:id="@+id/question"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:background="@drawable/button_shape"
+        android:background="@drawable/button_shape_on"
         android:src="@drawable/question"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -65,7 +65,7 @@
         android:id="@+id/group"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:background="@drawable/button_shape"
+        android:background="@drawable/button_shape_on"
         android:src="@drawable/group"
         app:layout_constraintEnd_toStartOf="@id/question"
         app:layout_constraintStart_toEndOf="@id/chat"
@@ -75,13 +75,13 @@
         android:id="@+id/chat"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:background="@drawable/button_shape"
+        android:background="@drawable/button_shape_on"
         android:src="@drawable/chat"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.fragment.app.FragmentContainerView
-        android:background="@color/purple_500"
+        android:background="@drawable/shape_fragment_yang"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="16dp"
@@ -96,7 +96,7 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <androidx.fragment.app.FragmentContainerView
-        android:background="@color/purple_200"
+        android:background="@drawable/shape_fragment_yin"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="24dp"
         android:layout_marginEnd="16dp"
