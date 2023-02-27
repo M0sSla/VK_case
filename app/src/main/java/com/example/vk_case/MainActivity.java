@@ -7,6 +7,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Telephony;
 import android.view.View;
 
 import com.example.vk_case.databinding.ActivityMainBinding;
@@ -39,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
         binding.chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_DIAL);
-                intent.setData(Uri.parse("tel:777"));
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("sms:"));
                 try {
                     startActivity(intent);
                 } catch (ActivityNotFoundException e) {
