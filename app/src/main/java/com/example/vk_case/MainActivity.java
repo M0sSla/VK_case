@@ -86,6 +86,15 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        // функционал значка группы: при нажатии на него всплывает новое окно, реализованное с помощью intent.
+        // Можно и с помощью фрагмент, однако тогда потребуется создавать nav_graph, слишком муторно :)
+        binding.group.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, GroupActivity.class);
+                startActivity(intent);
+            }
+        });
     }
     // отдельная функция, отвечающая за диалог
     private void myDialog() {
