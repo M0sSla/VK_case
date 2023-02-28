@@ -9,7 +9,8 @@
     android:layout_marginTop="16dp"
     android:layout_marginEnd="16dp"
     android:layout_marginBottom="16dp"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/beeeg">
 
     <ImageButton
         android:id="@+id/callEnd"
