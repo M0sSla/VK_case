@@ -2,8 +2,13 @@ package com.example.vk_case;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.transition.TransitionManager;
 
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -15,7 +20,8 @@ import com.example.vk_case.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-    private boolean stateCamera = true, stateMicro = true;
+    private boolean stateCamera = true, stateMicro = true, stateFragments = true;
+    ConstraintLayout constraintLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,12 +101,48 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        // функционал кнопки вопросительного знака. Я точно не понял, что конкретно необходимо сделать
+        // поэтому я просто переставлю местами фрагменты двух пользователей
+        binding.question.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                failure();
+                // переставить не получилось. При запуске данного куска кода приложение просто крашится((
+                // это итоговая версия моего проекта, большего я из себя не выдавлю за эти три дня активной верстки)
+//                ConstraintSet cache = new ConstraintSet();
+//                cache.clone(constraintLayout);
+//                if (stateFragments) {
+//                    cache.connect(R.id.firstFragment, ConstraintSet.TOP, R.id.secondFragment, ConstraintSet.BOTTOM);
+//                    cache.connect(R.id.firstFragment, ConstraintSet.BOTTOM, R.id.callEnd, ConstraintSet.TOP);
+//                    cache.connect(R.id.secondFragment, ConstraintSet.TOP, R.id.group, ConstraintSet.BOTTOM);
+//                    cache.connect(R.id.secondFragment, ConstraintSet.BOTTOM, R.id.firstFragment, ConstraintSet.TOP);
+//                    stateFragments = false;
+//                }
+//                else {
+//                    cache.connect(R.id.firstFragment, ConstraintSet.TOP, R.id.group, ConstraintSet.BOTTOM);
+//                    cache.connect(R.id.firstFragment, ConstraintSet.BOTTOM, R.id.secondFragment, ConstraintSet.TOP);
+//                    cache.connect(R.id.secondFragment, ConstraintSet.TOP, R.id.firstFragment, ConstraintSet.BOTTOM);
+//                    cache.connect(R.id.secondFragment, ConstraintSet.BOTTOM, R.id.callEnd, ConstraintSet.TOP);
+//                    stateFragments = true;
+//                }
+//                TransitionManager.beginDelayedTransition(constraintLayout);
+//                cache.applyTo(constraintLayout);
+            }
+        });
     }
+
     // отдельная функция, отвечающая за диалог
     private void myDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.hi);
         builder.setMessage(R.string.message);
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+    private void failure() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.fail1);
+        builder.setMessage(R.string.fail2);
         AlertDialog dialog = builder.create();
         dialog.show();
     }
